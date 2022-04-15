@@ -76,8 +76,6 @@ Advanced users may find this extremely easy and can easily write this in one lin
 */
 
 function sum (numbers) {
-    "use strict";
-  
     let total = 0;
   
     for (let i = 0; i < numbers.length; i++) {
@@ -107,9 +105,9 @@ function areYouPlayingBanjo(name) {
     
     if(firstLetter) {
       return name + " plays banjo";
-    } else {
-      return name + " does not play banjo";
     }
+
+    return name + " does not play banjo";
 }
 
 
@@ -126,9 +124,10 @@ Complete the solution so that it reverses the string passed into it.
 function solution(str) {
     let strReverse = "";
     
-    for(i = str.length -1; i >= 0; i--) {
+    for(let i = str.length -1; i >= 0; i--) {
       strReverse += str[i];
     }
+
     return strReverse;
 }
 
@@ -190,9 +189,9 @@ function sumArray(array) {
             sum += newArr[i];
         }
         return sum;
-    } else {
-        return 0;
     }
+    
+    return 0;
 }
 
 
@@ -262,9 +261,9 @@ Can you help her?
 function greet(name){
     if(name === "Johnny") {
         return "Hello, my love!";
-    } else {
-        return "Hello, " + name + "!";
     }
+    
+    return "Hello, " + name + "!";
 }
 
 
@@ -287,7 +286,7 @@ summation(8) -> 36
 var summation = function (num) {
     let sum = 0;
     
-    for(i = 1; i <= num; i++) {
+    for(let i = 1; i <= num; i++) {
         sum += i; 
     }
     
@@ -335,11 +334,7 @@ const rps = (p1, p2) => {
         return "Player 1 won!";
     } else if (p1 == "paper" && p2 == "rock") {
         return "Player 1 won!";
-    } /*else if (p1 == "rock" && p2 == "paper") {
-        return "Player 2 won!";
-    } else if (p1 == "scissors" && p2 == "rock") {
-        return "Player 2 won!";
-    }*/ else {
+    } else {
         return "Player 2 won!";
     }
 }
@@ -364,9 +359,9 @@ Zero (0) is not checked for any specific sign. Negative zeros make no mathematic
 function makeNegative(num) {
     if (num > 0) {
         return -Math.abs(num);
-    } else {
-        return num;
     }
+    
+    return num;
 }
 
 
@@ -449,9 +444,9 @@ function simpleMultiplication(number) {
     
     if(result === 0) {
         return number * 8;
-    } else {
-        return number * 9;
     }
+    
+    return number * 9;
 }
 
 
@@ -472,9 +467,9 @@ Waiting for translations and Feedback! Thanks!
 function paperwork(n, m) {
     if(n < 0 || m < 0) {
         return 0;
-    } else {
-        return n * m;
     }
+    
+    return n * m;
 }
 
 
