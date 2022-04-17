@@ -1,5 +1,75 @@
 //                                                      Newest always on top...
 
+/*      Convert a Number to a String!
+
+We need a function that can transform a number into a string.
+
+What ways of achieving this do you know?
+
+Examples:
+123 --> "123"
+999 --> "999"
+*/
+
+function numberToString(num) {
+    return num.toString();
+  }
+
+
+
+
+/*      Remove String Spaces
+
+Simple, remove the spaces from the string, then return the resultant string.
+*/
+
+function noSpace(x){
+    return x.replace(/ /g, "");
+  }
+
+
+
+
+/*      String repeat
+
+Write a function called repeatStr which repeats the given string string exactly n times.
+
+repeatStr(6, "I") // "IIIIII"
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+*/
+
+function repeatStr (n, s) {
+    return s.repeat(n);
+  }
+
+
+
+
+/*      Counting sheep...
+
+Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+For example,
+
+[true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]
+The correct answer would be 17.
+
+Hint: Don't forget to check for bad values like null/undefined
+*/
+
+function countSheeps(arrayOfSheep) {
+  let counter = 0;
+  
+  for (const obj of arrayOfSheep) {
+    if (obj === true) counter++;
+  }
+  return counter;
+}
 
 
 
