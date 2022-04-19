@@ -1,5 +1,141 @@
 //                                                      Newest always on top...
 
+/*      Invert values
+
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+invert([]) == []
+You can assume that all values are integers. Do not mutate the input array/list.
+*/
+
+function invert(array) {
+    return array.map(item => item * -1);
+  }
+
+
+
+/*      Calculate BMI
+
+Write function bmi that calculates body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+
+if bmi <= 25.0 return "Normal"
+
+if bmi <= 30.0 return "Overweight"
+
+if bmi > 30 return "Obese"
+*/
+
+function bmi(weight, height) {
+
+    let bmiIndex = weight / Math.pow(height, 2);
+                        
+    if(bmiIndex <= 18.5) {return "Underweight"}
+    else if(bmiIndex <= 25.0) {return "Normal"}
+    else if(bmiIndex <= 30.0) {return "Overweight"}
+    else {return "Obese"}
+  }
+
+
+
+
+/*      Reversed sequence
+
+Build a function that returns an array of integers from n to 1 where n>0.
+
+Example : n=5 --> [5,4,3,2,1]
+*/
+
+const reverseSeq = n => {
+    let array = [];
+    
+    for(let i = 1; i <= n; i++) {
+      array.unshift(i)
+    }
+    return array;
+  }
+
+
+
+
+/*      Calculate average
+
+Write a function which calculates the average of the numbers in a given list.
+
+Note: Empty arrays should return 0.
+*/
+
+function find_average(array) {
+    return array.length > 0 ? (array.reduce((a, b) => a + b) / array.length) : 0}
+
+
+
+
+/*      Abbreviate a Two Word Name
+
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+The output should be two capital letters with a dot separating them.
+
+It should look like this:
+
+Sam Harris => S.H
+
+patrick feeney => P.F
+*/
+
+function abbrevName(name){
+    let spl = name.split(' ');
+    return (spl[0][0] + '.' + spl[1][0]).toUpperCase();
+  }
+
+
+
+/*      Basic Mathematical Operations
+
+Your task is to create a function that does four basic mathematical operations.
+
+The function should take three arguments - operation(string/char), value1(number), value2(number).
+The function should return result of numbers after applying the chosen operation.
+
+Examples(Operator, value1, value2) --> output
+('+', 4, 7) --> 11
+('-', 15, 18) --> -3
+('*', 5, 5) --> 25
+('/', 49, 7) --> 7
+*/
+
+function basicOp(operation, value1, value2) {
+    switch (operation) {
+      case '-': return value1 - value2;
+      case '+': return value1 + value2;
+      case '/': return value1 / value2;
+      case '*': return value1 * value2;
+    }
+ }
+
+
+
+
+/*      Convert number to reversed array of digits
+
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+Example:
+348597 => [7,9,5,8,4,3]
+0 => [0]
+*/
+
+function digitize(n) {
+  return String(n).split('').map(Number).reverse();
+}
+
+
+
+
 /*      Convert a Number to a String!
 
 We need a function that can transform a number into a string.
