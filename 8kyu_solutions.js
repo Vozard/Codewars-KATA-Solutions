@@ -1,5 +1,201 @@
 //                                                      Newest always on top...
 
+/*      Well of Ideas - Easy Version
+
+For every good kata idea there seem to be quite a few bad ones!
+
+In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'.
+If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'.
+If there are no good ideas, as is often the case, return 'Fail!'.
+*/
+
+function well(x){
+    let countGood = x.filter(a => a ==='good').length;
+    
+    return countGood > 2 ? 'I smell a series!' : countGood > 0 ? 'Publish!' : 'Fail!';
+}
+
+
+
+
+/*      Sort and Star
+
+You will be given a vector of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+The returned value must be a string, and have "***" between each of its letters.
+
+You should not remove or add elements from/to the array.
+*/
+
+function twoSort(s) {
+    return s.sort()[0].split('').join('***');
+  }
+
+
+
+
+/*      Sum Mixed Array
+
+Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+Return your answer as a number.
+*/
+
+function sumMix(x){
+    return x.map(a => Number(a)).reduce((a,b) => a + b)
+  }
+
+
+
+
+/*      If you can't sleep, just count sheep!!
+
+f you can't sleep, just count sheep!!
+
+Task:
+Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+*/
+
+var countSheep = function (num){
+    let array = [];
+    if(num === 0) {return ""}
+  
+    for(let i = 1; i <= num; i++) {
+      array.push(i + ' sheep...')
+    }
+    return array.toString().replace(/,/g, "");
+  }
+
+
+
+
+/*      Total amount of points
+
+Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
+
+For example: ["3:1", "2:2", "0:1", ...]
+
+Write a function that takes such collection and counts the points of our team in the championship. Rules for counting points for each match:
+
+if x > y: 3 points
+if x < y: 0 point
+if x = y: 1 point
+Notes:
+
+there are 10 matches in the championship
+0 <= x <= 4
+0 <= y <= 4
+*/
+
+function points(games) {
+    let countedPoints = 0;
+  
+    for(let i = 0; i < games.length; i++) {
+      if(games[i][0] > games[i][2]) {
+        countedPoints += 3;
+      } else if(games[i][0] === games[i][2]) {
+        countedPoints++;
+      } else {countedPoints += 0}
+    } return countedPoints;
+  }
+
+
+
+
+/*      Beginner - Reduce but Grow
+
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+*/
+
+function grow(x){
+    let intGrow = 1;
+    
+    for(let i = 0; i < x.length; i++) {
+      intGrow *= x[i];
+    } return intGrow;
+}
+
+
+/*      Fake Binary
+
+Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+Note: input will never be an empty string
+*/
+
+function fakeBin(x){
+    let array = x.split("");
+
+    for(let i = 0; i < array.length; i++) {
+        if(array[i] < 5) {
+            array[i] = 0;
+        } else {
+          array[i] = 1;
+        }
+    } return array.join("");
+}
+
+
+
+
+/*      Name Shuffler
+
+Write a function that returns a string in which firstname is swapped with last name.
+
+nameShuffler('john McClane'); => "McClane john"
+*/
+
+function nameShuffler(str){
+    let name = str.split(' ');
+    
+    return name[1] + " " + name[0];
+  }
+
+
+
+
+/*      Short Long Short
+
+Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty ( zero length ).
+
+Hint for R users:
+
+The length of string is not always the same as the number of characters
+For example: (Input1, Input2) --> output
+
+("1", "22") --> "1221"
+("22", "1") --> "1221"
+*/
+
+function solution(a, b){
+    return a.length > b.length ? `${b}${a}${b}` : `${a}${b}${a}`
+}
+
+
+/*      How good are you really?
+
+** There was a test in your class and you passed it. Congratulations!
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+Return True if you're better, else False!
+
+Note:
+Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+*/
+
+function betterThanAverage(classPoints, yourPoints) {
+    let average = classPoints.reduce((a,b) => a+b) / classPoints.length;
+
+    return average < yourPoints ? true : false;
+  }
+
+
+
+
 /*      Invert values
 
 Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
